@@ -24,9 +24,11 @@ class DataIngestionConfig:
         self.training_file_path: str = os.path.join(
                 self.data_ingestion_dir, training_pipeline.DATA_INGESTION_INGESTED_DIR, training_pipeline.TRAIN_FILE_NAME
             )
+        print(self.training_file_path)
         self.testing_file_path: str = os.path.join(
                 self.data_ingestion_dir, training_pipeline.DATA_INGESTION_INGESTED_DIR, training_pipeline.TEST_FILE_NAME
             )
+        print(self.testing_file_path)
         self.train_test_split_ratio: float = training_pipeline.DATA_INGESTION_TRAIN_TEST_SPLIT_RATION
         self.collection_name: str = training_pipeline.DATA_INGESTION_COLLECTION_NAME
         self.database_name: str = training_pipeline.DATA_INGESTION_DATABASE_NAME
@@ -52,3 +54,6 @@ class ModelEvaluationConfig:
 class ModelPusherConfig:
      def __init__(self):
         pass
+if __name__=='__main__':
+    TrainingPipelineConfig=TrainingPipelineConfig()
+    DataIngestionConfig(training_pipeline_config=TrainingPipelineConfig)
